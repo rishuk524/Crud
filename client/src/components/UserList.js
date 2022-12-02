@@ -11,7 +11,7 @@ const UserList = ({ userData, fetchUsersData, BASE_URL }) => {
       if (!username || !useremail) {
         toast.error("Please enter both name and email");
       } else {
-        const resp = await axios.put(`${BASE_URL}/editUser/${user._id}`, {
+        const resp = await axios.put(`${BASE_URL}/edituser/${user._id}`, {
           name: username,
           email: useremail,
         });
@@ -28,7 +28,7 @@ const UserList = ({ userData, fetchUsersData, BASE_URL }) => {
 
   const handleDelete = async (userId) => {
     try {
-      const resp = await axios.delete(`${BASE_URL}/deleteUser/${userId}`);
+      const resp = await axios.delete(`${BASE_URL}/deleteuser/${userId}`);
 
       if (resp.data.success) {
         toast.success("User deleted successfully");
